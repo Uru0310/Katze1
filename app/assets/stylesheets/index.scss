@@ -1,0 +1,31 @@
+.header {
+  height: 100px;
+  width: 100%;
+  background-color: #a9a9a9;
+  &__main {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    &__title {
+      font-size: 80px;
+      margin-left: 50px;
+    }
+    &__sub {
+      position: absolute;
+      display: flex;
+      right: 100px;
+      font-size: 30px;
+      margin-top: 50px;
+      &__signup {
+        margin-left: 50px;
+      }
+      &__new {
+        margin-left: 50px;
+      }
+      &__signout {
+        margin-left: 50px;
+      }
+    }
+  }
+}

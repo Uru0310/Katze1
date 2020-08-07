@@ -1,0 +1,15 @@
+.header
+  .header__main
+    .header__main__title
+      = link_to "Katze", root_path
+    .header__main__sub
+      - if user_signed_in?
+        .header__main__sub__new
+          新規投稿
+        .header__main__sub__signout
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+      - else
+        .header__main__sub__signin
+          = link_to "ログイン", new_user_session_path
+        .header__main__sub__signup
+          = link_to "新規登録", new_user_registration_path
