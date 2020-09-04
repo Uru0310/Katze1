@@ -4,21 +4,30 @@
       = link_to "Katze", root_path
     .header__main__sub
       - if user_signed_in?
-        .header__main__sub__post
-          = link_to "投稿一覧", posts_path
         .header__main__sub__new
           = link_to "新規投稿", new_post_path
         .header__main__sub__signout
           = link_to "ログアウト", destroy_user_session_path, method: :delete
       - else
-        .header__main__sub__post
-          = link_to "投稿一覧", posts_path
         .header__main__sub__signin
           = link_to "ログイン", new_user_session_path
         .header__main__sub__signup
           = link_to "新規登録", new_user_registration_path
-.content
-  .body-signin
-    = link_to "ログイン", new_user_session_path
-  .body-signup
-    = link_to "新規登録", new_user_registration_path
+.main
+  .main__image
+    = attachment_image_tag @post, :image
+  .main__sub
+    = @post.name
+  .main__sub
+    = @post.cat_breed
+  .main__sub
+    = @post.old
+  .main__sub
+    = @post.personality
+  .main__sub
+    = @post.condition
+  .main__edit
+    - if @post.user.id == current_user.id
+      = link_to "編集", edit_post_path(@post)
+      = link_to "削除", post_path(@post), method: :delete, data: {confirm: "削除しますか？"}
+
