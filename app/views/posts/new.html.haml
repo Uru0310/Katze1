@@ -1,0 +1,31 @@
+.title
+  .title-word
+    新規投稿画面
+.wrapper
+  = form_for @post do |f|
+    .field
+      = f.label :name
+      %br/
+      = f.text_field :name, class: "input", autofocus: true, autocomplete: "name"
+    .field
+      = f.label :cat_breed
+      %br/
+      = f.text_field :cat_breed, class: "input", autocomplete: "cat_breed"
+      .field
+      = f.label :old
+      %br/
+      = f.text_field :old, class: "input", autofocus: true, autocomplete: "old"
+      .field
+      = f.label :personality
+      %br/
+      = f.text_area :personality, class: "input", autofocus: true, autocomplete: "personality"
+      .field
+      = f.label :condition
+      %br/
+      = f.text_area :condition, class: "input", autofocus: true, autocomplete: "condition"
+      .field
+      = f.label :image
+      %br/
+      = f.attachment_field :image, class: "input", autofocus: true, autocomplete: "image"
+    .actions
+      = f.submit "新規投稿"

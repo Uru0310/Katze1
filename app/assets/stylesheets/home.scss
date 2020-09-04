@@ -1,3 +1,19 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.content {
+  height: 100vh;
+  width: 100%;
+  font-size: 40px;
+  .body-signin {
+    margin-top: 100px;
+    margin-left: 480px;
+    margin-right: 480px;
+    text-align: center;
+    background-color: #ccff99;
+  }
+  .body-signup {
+    margin-top: 100px;
+    margin-left: 480px;
+    margin-right: 480px;
+    text-align: center;
+    background-color: #ccff99;
+  }
+}
